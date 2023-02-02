@@ -6,6 +6,6 @@ project(
     LANGUAGES CXX CUDA
 )
 
-file(GLOB SOURCES "./src/*cpp")
+file(GLOB SOURCES_CPU "./src/cpu/*.cpp")
 
-add_executable(Main ${SOURCES})
+add_executable(CPU_MAIN ${SOURCES_CPU})

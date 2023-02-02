@@ -1,3 +1,4 @@
+#include "model/WaterModel.h"
 #include <iostream>
 
 int main() {
