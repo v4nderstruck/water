@@ -1,6 +1,10 @@
-#include "model/WaterModel.h"
 #include <iostream>
+#include "model/WaterModel.h"
+#include "arithmetic/Numbers.h"
 
 int main() {
-  std::cout << "Hello World\n";
+  WaterMolecule WaterOne(float3(0,0,0), float3(1,0,0));
+  WaterMolecule WaterTwo(float3(0,2,0), float3(1,0,0));
+  std::cout << "Water Molecule 1: \n" << WaterOne << "\n";
+  std::cout << "Water Molecule 2: \n" << WaterTwo << "\n";
 }

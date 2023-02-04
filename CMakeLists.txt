@@ -6,6 +6,9 @@ project(
     LANGUAGES CXX CUDA
 )
 
-file(GLOB SOURCES_CPU "./src/cpu/*.cpp")
+file(GLOB_RECURSE SOURCES_CPU 
+        "./src/cpu/**/*.cpp"
+        "./src/cpu/*.cpp")
 
-add_executable(CPU_MAIN ${SOURCES_CPU})
+
+add_executable(CPU_WaterSim ${SOURCES_CPU})

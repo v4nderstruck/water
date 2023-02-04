@@ -1,6 +1,7 @@
 #ifndef WATER_CPU_MODEL_WATER_MODEL_H
 #define WATER_CPU_MODEL_WATER_MODEL_H
 
+#include <iostream>
 #include <math.h>
 #include <memory>
 #include <vector>
@@ -14,11 +15,12 @@
 #define ANGLE_HYDROGEN      104.52
 
 class WaterMolecule {
-enum Structure {OXYGEN = 0, HYDROGEN_1, HYDROGEN_2};
 public:
+  enum Structure {OXYGEN = 0, HYDROGEN_1, HYDROGEN_2};
   // will put the molecule together in the right place
   WaterMolecule(float3 oxygen_position, float3 rotation);
-  std::array<float4, 3> getPointCharges();
+  std::array<float4, 3> getPointCharges() const;
+
 private:
   // applies rotation and ARM_LENGTH to get one hydrogen 
   // 'Main' because first Hydrogen
@@ -33,6 +35,8 @@ private:
   // [2] hydrogen atom + charge
   std::array<float4, 3> pointCharges;
 };
+
+std::ostream& operator<<(std::ostream& os, const WaterMolecule& w);
 
 class WaterModelSim {
 public:
